@@ -1,0 +1,35 @@
+{
+    "auth": {
+        "username": "BROWSERSTACK_USERNAME",
+        "access_key": "BROWSERSTACK_ACCESS_KEY"
+    },
+    "browsers": [
+        {
+            "browser": "chrome",
+            "os": "Windows 10",
+            "versions": [
+                "latest-1"
+            ]
+        }
+    ],
+    "run_settings": {
+        "cypress_config_file": "./cypress.config.js",
+        "cypress_version": "13.latest",
+        "project_name": "pgast-automacao-web-2026",
+        "build_name": "build-name",
+        "exclude": [],
+        "parallels": 1,
+        "npm_dependencies": {},
+        "auto_import_dev_dependencies": true,
+        "exclude_dependencies": [],
+        "package_config_options": {},
+        "headless": true
+    },
+    "connection_settings": {
+        "local": false,
+        "local_identifier": null,
+        "local_mode": null,
+        "local_config_file": null
+    },
+    "disable_usage_reporting": false
+}
