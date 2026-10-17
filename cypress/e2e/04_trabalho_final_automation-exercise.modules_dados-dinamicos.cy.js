@@ -3,7 +3,7 @@
 
 // Vou importar as funções do arquivo cadastro/index.js
 
-const cadastro = require('../modules/cadastro/00cadastroPage.js');
+const cadastro = require('../modules/cadastro/cadastroPage.js');
 const login = require('../modules/login/loginPage.js');
 const produtos = require('../modules/Produtos/produtosPage.js');
 const checkout = require('../modules/checkout/checkoutPage.js');

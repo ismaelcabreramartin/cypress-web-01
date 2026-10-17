@@ -3,10 +3,16 @@
 
 // Vou importar as funções do arquivo cadastro/index.js
 
-const cadastro = require('../modules/cadastro/00cadastroPage.js');
+const cadastro = require('../modules/cadastro/cadastroPage.js');
 const login = require('../modules/login/loginPage.js');
 
+/* Importar dados dinâmicos */
+const { gerarDadosCadastro } = require('../modules/dados/cadastroDados.js');
+
 describe('Automation Exercise Test Suite', () => {
+  
+  const dados = gerarDadosCadastro();
+
   it('Teste 01 - Cadastrar um novo usuário com sucesso', () => {
     // Acessar a página de login
     login.acessarPaginaDeLogin()
@@ -15,10 +21,10 @@ describe('Automation Exercise Test Suite', () => {
     cadastro.verificarCamposSignup()
 
     /* INICIAR CADASTRO */
-    cadastro.iniciarCadastro("PGATS Aut01", `pgats.aut01-${Date.now()}@example.com`);
+    cadastro.iniciarCadastro("PGATS AUTO01", `pgats.aut01-${Date.now()}@example.com`);
 
     /* PREENCHER CADASTRO */
-    cadastro.preencherCadastro();
+    cadastro.preencherCadastro(dados);
 
     /* VERIFICAR CADASTRO COM SUCESSO */
     cadastro.verificarCadastroSucesso();
@@ -42,7 +48,7 @@ describe('Automation Exercise Test Suite', () => {
 
     // Assertion
     /* Verificar Login foi efetuado com sucesso */
-    login.verificarLoginFoiEfetuadoComSucesso();
+    login.verificarLoginFoiEfetuadoComSucesso("PGATS AUTO01");
   });
 
   it('Teste 03 - Login User with incorrect email and password', () => {
@@ -71,7 +77,7 @@ describe('Automation Exercise Test Suite', () => {
     login.preencherLogin("pgats.aut01@test.com", "123456");
 
     // Verificar que o usuário ficou logado
-    login.verificarLoginFoiEfetuadoComSucesso()
+    login.verificarLoginFoiEfetuadoComSucesso("PGATS AUTO01")
 
     // Realizar logout
     login.efetuarLogout();

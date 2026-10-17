@@ -3,7 +3,7 @@
 
 // Vou importar as funções do arquivo cadastro/index.js
 
-const cadastro = require('../modules/cadastro/00cadastroPage.js');
+const cadastro = require('../modules/cadastro/cadastroPage.js');
 const login = require('../modules/login/loginPage.js');
 
 /* Importar dados dinâmicos */
@@ -101,32 +101,3 @@ describe('Automation Exercise Test Suite', () => {
     cadastro.verificarMensagemDeErroCadastroEmailExistente()
   });
 });
-
-// Login com diferentes perfies de usuários (deletar depois)
-
-const usuarios = [
-  { 
-    perfil: 'Admin',
-    email: 'admin@automationexercise.com',
-    senha: 'admin123'
-  },
-  { 
-    perfil: 'Comum',
-    email: 'pgats.aut01@test.com',
-    senha: '123456'
-  },
-  { 
-    perfil: 'Aluno',
-    email: `pgats.aut01-${Date.now()}@example.com`,
-    senha: '123456'
-  }
-];
-
-function autenticarComPerfil(perfil) {
-  const usuario = usuarios[perfil];
-
-  cy.get().type(usuario.email);
-  cy.get().type(usuario.senha);
-
-  cy.get().click();
-}
