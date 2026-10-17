@@ -23,7 +23,7 @@ describe('Automation Exercise Test Suite', () => {
     });
   });
 
-  it('Teste 01 - Cadastrar um novo usuário com sucesso', () => {
+  it('Teste 01 - TC01 Cadastrar um novo usuário com sucesso', () => {
     // Acessar a página de login
     login.acessarPaginaDeLogin()
 
@@ -42,7 +42,7 @@ describe('Automation Exercise Test Suite', () => {
 
   });
 
-  it('Teste 02 - Login User with correct email and password', () => {
+  it('Teste 02 - TC02 Login User with correct email and password', () => {
     // Acessar a página de login
     login.acessarPaginaDeLogin()
 
@@ -60,7 +60,7 @@ describe('Automation Exercise Test Suite', () => {
     login.verificarLoginFoiEfetuadoComSucesso(dados.nome);
   });
 
-  it('Teste 03 - Login User with incorrect email and password', () => {
+  it('Teste 03 - TC03 Login User with incorrect email and password', () => {
     // Acessar a página de login
     login.acessarPaginaDeLogin()
 
@@ -75,7 +75,7 @@ describe('Automation Exercise Test Suite', () => {
 
   });
 
-  it('Teste 04 - Logout User', () => {
+  it('Teste 04 - TC04 Logout User', () => {
     // Acessar a página principal
     login.acessarPaginaDeLogin()
     
@@ -96,7 +96,7 @@ describe('Automation Exercise Test Suite', () => {
 
   });
 
-  it('Teste 05 - Register User with existing email', () => {
+  it('Teste 05 - TC05 Register User with existing email', () => {
     // Acessar a página principal
     login.acessarPaginaDeLogin()
 

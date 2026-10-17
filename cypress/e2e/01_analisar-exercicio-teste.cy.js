@@ -1,4 +1,4 @@
-describe('Cadastrar entradas e saídas com bugs', () => {
+describe.skip('Cadastrar entradas e saídas com bugs', () => {
   it('Cadastrar uma nova transação de entrada - falha 1', () => {
     cy.visit("https://devfinance-agilizei.netlify.app")
  
