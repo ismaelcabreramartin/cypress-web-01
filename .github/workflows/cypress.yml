@@ -11,3 +11,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: cypress-io/github-action@v6
+
+      - name: Publicar o relatório
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: relatorio-mochawesome
+          path: cypress/reports
+
+      - name: Publicar screenshots das falhas
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
